@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Edit Ninja</title>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand text-info btn btn-primary border-info " href="/"><strong> &#8592 Back to Main Page</strong></a>
+          <img width="60" height="60" src="/static/img/Coding_Dojo.png" class="m-2">
+    </div>
+    <form action="/update_ninja" method="post" class="col-lg-3 offset-lg-3">
+        <h1 class="text-center">Edit User</h1>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="first_name"><strong>First Name</strong></label>
+                <input type="text" name="first_name" class="form-control" value="{{ninja.first_name}}">
+            </div>
+            <div class="form-group">
+                <label for="last_name"><strong>Last Name</strong></label>
+                <input type="text" name="last_name"class="form-control" value="{{ninja.last_name}}">
+            </div>
+            <div>
+                <input type="submit" value="Update" class="btn btn-dark m-2 p-2">
+            </div>
+            <input type="hidden" name="id" value="{{ninja.id}}">
+        </div>
+    </form>
+</body>
+</html>

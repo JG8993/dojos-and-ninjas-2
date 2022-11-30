@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>All Dojos</title>
+</head>
+<body>
+    <div>
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-info btn btn-primary border-info " href="/"><strong>Coding Dojo Main</strong></a>
+        <img width="60" height="60" src="/static/img/Coding_Dojo.png" class="m-2">
+    </div>
+    <div class="card w-25 text-center m-3 p-5" style="float:right">
+        <h1 class="card-title">All Dojos</h1>
+        {% for x in return_dojos %}
+        <p>
+          <a href="/dojo/{{x.id}}" class="text-dark">{{x.name}}</a>
+        </p>
+        {% endfor %}
+        <div>
+        <a href="/ninjas" class="btn btn-dark">Add Ninja</a>
+        </div>
+    </div>
+      <div>
+        <form action="/create_dojo" class="col-3 text-center m-5 p-3" method="post" style="float:right">
+            <h3 class="text-center">New Dojo</h3>
+            <div class="form-group">
+                <label for="name"><strong>Dojo Name</strong></label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <input type="submit" value="Create Dojo" class="btn btn-dark m-2 p-2">
+        </form>
+      </div>
+</body>
+</html>
